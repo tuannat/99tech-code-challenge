@@ -3,6 +3,12 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+// https://interview.switcheo.com/prices.json
+
+interface Price {
+  [key: string]: number;
+}
+
 function App() {
   const [count, setCount] = useState(0)
 
