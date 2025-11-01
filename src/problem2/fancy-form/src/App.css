@@ -29,6 +29,3 @@
   z-index: -1;
 }
 
-.dark .app-background::after {
-  background: rgba(0, 0, 0, 0.65);
-}

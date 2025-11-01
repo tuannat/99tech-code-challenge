@@ -1,73 +1,111 @@
-# React + TypeScript + Vite
+# Fancy Form - Currency Converter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive currency converter application built with React, TypeScript, and Vite. Features real-time exchange rates, elegant UI design, and comprehensive input validation.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Real-time Exchange Rates**: Fetches live currency data from Switcheo's API
+- **Modern UI**: Gradient backgrounds, smooth animations, and responsive design
+- **Smart Input Validation**: Handles various number formats with comma separators and decimal points
+- **Token Icons**: Visual currency representation with fallback handling
+- **Currency Swapping**: Quick currency pair swapping with animated buttons
+- **Loading States**: Visual feedback during API calls and calculations
+- **Error Handling**: Comprehensive error messages and validation feedback
 
-## React Compiler
+## 🚀 Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+- Node.js (version 18 or higher)
+- pnpm (recommended package manager)
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   pnpm install
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+3. Start the development server:
+   ```bash
+   pnpm dev
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+4. Open your browser and navigate to `http://localhost:5173`
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Available Scripts
+
+- `pnpm dev` - Start development server with hot reload
+- `pnpm build` - Build for production
+- `pnpm lint` - Run ESLint for code quality checks
+- `pnpm preview` - Preview production build locally
+
+## 🏗️ Tech Stack
+
+- **React 19** - UI framework with latest features
+- **TypeScript** - Type safety and better developer experience
+- **Vite** - Fast build tool and development server
+- **TanStack Query** - Data fetching and caching
+- **Tailwind CSS 4** - Utility-first styling
+- **Radix UI** - Accessible component primitives
+- **Lucide React** - Beautiful icon library
+
+## 📁 Project Structure
+
+```
+src/
+├── components/ui/     # Reusable UI components (Button, Input, Select)
+├── assets/
+│   ├── tokens/        # Currency token icons (200+ crypto/fiat currencies)
+│   └── bg-product_lg.jpg
+├── lib/
+│   └── utils.ts       # Utility functions
+├── App.tsx            # Main application component
+├── App.css           # Application-specific styles
+├── index.css         # Global styles and Tailwind imports
+└── main.tsx          # Application entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎨 Features in Detail
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Currency Conversion
+- Supports 200+ cryptocurrencies and traditional currencies
+- Real-time exchange rate calculations
+- Automatic price updates from external API
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Input Validation
+- Prevents invalid characters and formats
+- Handles comma separators for large numbers
+- Validates positive number requirements
+- Real-time error feedback
+
+### Responsive Design
+- Mobile-first approach
+- Optimized for all screen sizes
+- Touch-friendly interface elements
+
+## 🔧 Configuration
+
+The project uses modern tooling with sensible defaults:
+
+- **Vite**: Configured for React with TypeScript support
+- **ESLint**: React and TypeScript rules enabled
+- **Tailwind CSS**: Custom configuration with animations
+- **TypeScript**: Strict mode enabled for better type safety
+
+## 📊 API Integration
+
+Fetches exchange rates from: `https://interview.switcheo.com/prices.json`
+
+The application intelligently handles:
+- Multiple price entries per currency
+- Latest price selection by date
+- API error states and loading indicators
+- Fallback error handling
+
+## 🎯 Performance Features
+
+- **React Query**: Efficient data caching and background updates
+- **Memoization**: Optimized calculations and currency filtering
+- **Lazy Loading**: Optimized asset loading with fallbacks
+- **Debounced Calculations**: Smooth user experience during rapid input changes
