@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { RotateCcw, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
@@ -18,6 +18,24 @@ function App() {
 
   const { currencyPrices, currencies, isLoading, error } = usePrices()
 
+  // Handle calculation with proper cleanup to prevent memory leaks
+  useEffect(() => {
+    if (!isCalculating) return
+
+    const timer = setTimeout(() => {
+      const fromPrice = currencyPrices.get(fromCurrency) || 1
+      const toPrice = currencyPrices.get(toCurrency) || 1
+      const numAmount = parseAmount(amount)
+
+      // Convert: amount * fromPrice / toPrice
+      const result = (numAmount * fromPrice) / toPrice
+      setConvertedAmount(result.toFixed(6))
+      setShowResult(true)
+      setIsCalculating(false)
+    }, 2000)
+
+    return () => clearTimeout(timer)
+  }, [isCalculating, currencyPrices, fromCurrency, toCurrency, amount])
 
   const handleSwap = () => {
     setFromCurrency(toCurrency)
@@ -45,19 +63,6 @@ function App() {
     setIsCalculating(true)
     setShowResult(false)
     setConvertedAmount('')
-
-    // Fake timeout for 2 seconds
-    setTimeout(() => {
-      const fromPrice = currencyPrices.get(fromCurrency) || 1
-      const toPrice = currencyPrices.get(toCurrency) || 1
-      const numAmount = parseAmount(amount)
-
-      // Convert: amount * fromPrice / toPrice
-      const result = (numAmount * fromPrice) / toPrice
-      setConvertedAmount(result.toFixed(6))
-      setShowResult(true)
-      setIsCalculating(false)
-    }, 2000)
   }
 
   // Check if currencies are the same
