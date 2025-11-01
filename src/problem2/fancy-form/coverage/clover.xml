@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1762020382624" clover="3.2.0">
+  <project timestamp="1762020382624" name="All files">
+    <metrics statements="65" coveredstatements="63" conditionals="37" coveredconditionals="36" methods="13" coveredmethods="13" elements="115" coveredelements="112" complexity="0" loc="65" ncloc="65" packages="4" files="4" classes="4"/>
+    <package name="components.ui">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="button-variants.ts" path="/Users/tuannat/projects/99tech-code-challenge/src/problem2/fancy-form/src/components/ui/button-variants.ts">
+        <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="hooks">
+      <metrics statements="24" coveredstatements="24" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="7"/>
+      <file name="usePrices.ts" path="/Users/tuannat/projects/99tech-code-challenge/src/problem2/fancy-form/src/hooks/usePrices.ts">
+        <metrics statements="24" coveredstatements="24" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="7"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="14" count="7" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="15" type="stmt"/>
+        <line num="27" count="15" type="stmt"/>
+        <line num="28" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="30" count="5" type="stmt"/>
+        <line num="33" count="5" type="stmt"/>
+        <line num="34" count="17" type="stmt"/>
+        <line num="35" count="17" type="cond" truecount="4" falsecount="0"/>
+        <line num="36" count="15" type="stmt"/>
+        <line num="41" count="5" type="stmt"/>
+        <line num="42" count="5" type="stmt"/>
+        <line num="43" count="12" type="stmt"/>
+        <line num="46" count="5" type="stmt"/>
+        <line num="50" count="15" type="stmt"/>
+        <line num="51" count="13" type="stmt"/>
+        <line num="54" count="15" type="stmt"/>
+      </file>
+    </package>
+    <package name="lib">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="utils.ts" path="/Users/tuannat/projects/99tech-code-challenge/src/problem2/fancy-form/src/lib/utils.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="35" coveredstatements="35" conditionals="29" coveredconditionals="28" methods="5" coveredmethods="5"/>
+      <file name="currency.ts" path="/Users/tuannat/projects/99tech-code-challenge/src/problem2/fancy-form/src/utils/currency.ts">
+        <metrics statements="35" coveredstatements="35" conditionals="29" coveredconditionals="28" methods="5" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="18" type="stmt"/>
+        <line num="14" count="18" type="stmt"/>
+        <line num="15" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="20" count="18" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="10" type="stmt"/>
+        <line num="22" count="10" type="stmt"/>
+        <line num="23" count="10" type="stmt"/>
+        <line num="25" count="8" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="29" type="stmt"/>
+        <line num="31" count="29" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="1" type="stmt"/>
+        <line num="35" count="28" type="cond" truecount="4" falsecount="0"/>
+        <line num="36" count="2" type="stmt"/>
+        <line num="40" count="26" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="45" count="23" type="cond" truecount="2" falsecount="0"/>
+        <line num="46" count="3" type="stmt"/>
+        <line num="50" count="20" type="stmt"/>
+        <line num="51" count="20" type="cond" truecount="4" falsecount="0"/>
+        <line num="52" count="3" type="stmt"/>
+        <line num="56" count="17" type="stmt"/>
+        <line num="57" count="17" type="cond" truecount="2" falsecount="0"/>
+        <line num="58" count="1" type="stmt"/>
+        <line num="62" count="16" type="cond" truecount="2" falsecount="0"/>
+        <line num="63" count="16" type="cond" truecount="1" falsecount="1"/>
+        <line num="64" count="16" type="cond" truecount="5" falsecount="0"/>
+        <line num="65" count="2" type="stmt"/>
+        <line num="68" count="14" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
