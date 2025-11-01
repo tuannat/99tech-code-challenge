@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Server - Resource Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📦 Resource Manager</h1>
+            <p>Manage your resources with full CRUD operations</p>
+        </header>
+
+        <main>
+            <!-- Create Resource Form -->
+            <section class="card">
+                <h2>Create New Resource</h2>
+                <form id="createForm" class="form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required maxlength="255" placeholder="Enter resource name">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" required maxlength="1000" placeholder="Enter resource description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="category">Category:</label>
+                        <input type="text" id="category" name="category" required maxlength="100" placeholder="Enter category (e.g., electronics, furniture)">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status:</label>
+                        <select id="status" name="status">
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Resource</button>
+                </form>
+            </section>
+
+            <!-- Filters -->
+            <section class="card">
+                <h2>Filter Resources</h2>
+                <div class="filter-controls">
+                    <input type="text" id="searchInput" placeholder="Search by name or description">
+                    <select id="categoryFilter">
+                        <option value="">All Categories</option>
+                    </select>
+                    <select id="statusFilter">
+                        <option value="">All Status</option>
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                    <button id="clearFilters" class="btn btn-secondary">Clear Filters</button>
+                </div>
+            </section>
+
+            <!-- Resources List -->
+            <section class="card">
+                <div class="section-header">
+                    <h2>Resources</h2>
+                    <button id="refreshBtn" class="btn btn-secondary">🔄 Refresh</button>
+                </div>
+                <div id="resourcesList" class="resources-grid">
+                    <!-- Resources will be loaded here -->
+                </div>
+                <div id="pagination" class="pagination">
+                    <!-- Pagination controls will be loaded here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- Edit Modal -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Edit Resource</h3>
+                    <span class="close">&times;</span>
+                </div>
+                <form id="editForm" class="form">
+                    <input type="hidden" id="editId">
+                    <div class="form-group">
+                        <label for="editName">Name:</label>
+                        <input type="text" id="editName" name="name" required maxlength="255" placeholder="Enter resource name">
+                    </div>
+                    <div class="form-group">
+                        <label for="editDescription">Description:</label>
+                        <textarea id="editDescription" name="description" required maxlength="1000" placeholder="Enter resource description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="editCategory">Category:</label>
+                        <input type="text" id="editCategory" name="category" required maxlength="100" placeholder="Enter category">
+                    </div>
+                    <div class="form-group">
+                        <label for="editStatus">Status:</label>
+                        <select id="editStatus" name="status">
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="submit" class="btn btn-primary">Update Resource</button>
+                        <button type="button" class="btn btn-secondary close-modal">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Toast Notifications -->
+        <div id="toast" class="toast"></div>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

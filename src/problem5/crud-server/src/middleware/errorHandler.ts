@@ -1,0 +1,28 @@
+import { Request, Response, NextFunction } from 'express';
+
+export interface ApiError extends Error {
+  statusCode?: number;
+  isOperational?: boolean;
+}
+
+export const errorHandler = (
+  error: ApiError,
+  req: Request,
+  res: Response,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  _next: NextFunction
+): void => {
+  const statusCode = error.statusCode || 500;
+  const message = error.message || 'Internal Server Error';
+
+  console.error(`Error ${statusCode}: ${message}`);
+  console.error(error.stack);
+
+  res.status(statusCode).json({
+    error: {
+      message,
+      status: statusCode,
+      ...(process.env.NODE_ENV === 'development' && { stack: error.stack }),
+    },
+  });
+};
