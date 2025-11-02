@@ -98,6 +98,61 @@ pnpm lint:fix
 pnpm seed
 ```
 
+## Docker
+
+The application includes a production-ready multi-stage Dockerfile for containerized deployment.
+
+### Building the Docker Image
+
+```bash
+# Build the Docker image
+docker build -t crud-server .
+```
+
+### Running with Docker
+
+```bash
+# Run the container
+docker run -p 3000:3000 crud-server
+
+# Run with custom environment variables
+docker run -p 3000:3000 -e PORT=3000 -e NODE_ENV=production crud-server
+
+# Run in detached mode
+docker run -d -p 3000:3000 --name crud-server-container crud-server
+```
+
+### Docker Compose (Optional)
+
+Create a `docker-compose.yml` file for easier management:
+
+```yaml
+version: '3.8'
+services:
+  crud-server:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+    volumes:
+      - ./database.sqlite:/app/database.sqlite
+```
+
+Then run:
+```bash
+docker-compose up -d
+```
+
+### Docker Features
+
+- **Multi-stage Build**: Optimized for production with separate build and runtime stages
+- **Alpine Linux**: Lightweight base image for smaller container size
+- **Production Dependencies**: Only installs runtime dependencies in final image
+- **Static Assets**: Includes public web UI files and database
+- **Port Configuration**: Exposes port 3000 by default
+
 ## Sample Data
 
 The application includes a seeding script that populates the database with 30+ diverse sample resources for testing and demonstration purposes.
